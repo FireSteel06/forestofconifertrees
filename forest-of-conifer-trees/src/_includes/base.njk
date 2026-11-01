@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if title %}{{ title }} / {% endif %}forest of conifer trees</title>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-v20-latin/ibm-plex-mono-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-v20-latin/ibm-plex-mono-v20-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<main>
+{{ content | safe }}
+</main>
+<nav aria-label="Pages">
+  <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
+  <a href="/posts/"{% if "/posts/" in page.url %} aria-current="page"{% endif %}>Post history</a>
+  <a href="/art/"{% if page.url == "/art/" %} aria-current="page"{% endif %}>Art in progress</a>
+  <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About me</a>
+</nav>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
