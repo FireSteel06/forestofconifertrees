@@ -6,9 +6,9 @@ layout: base.njk
   <a class="logo" href="/">forest of conifer trees</a>
   <div class="txt">
     <h2>Latest posts</h2>
-    {% if collections.postsNewest.length %}<ul>{% for post in collections.postsNewest %}{% if loop.index <= 3 %}<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>{% endif %}{% endfor %}</ul>{% else %}<p>Nothing yet.</p>{% endif %}
+    {% if collections.postsNewest.length %}<ul>{% for post in collections.postsNewest %}{% if loop.index <= 3 %}<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>{% endif %}{% endfor %}</ul>{% else %}<p>Nothing yet</p>{% endif %}
     <h2>In progress</h2>
-    {% if art | length %}<ul>{% for a in art %}{% if loop.index <= 3 %}<li><a href="/art/">{{ a.title }}</a></li>{% endif %}{% endfor %}</ul>{% else %}<p>Nothing yet.</p>{% endif %}
+    {% if art | length %}<ul>{% for a in art %}{% if loop.index <= 3 %}<li><a href="/art/">{{ a.title }}</a></li>{% endif %}{% endfor %}</ul>{% else %}<p>Nothing yet</p>{% endif %}
   </div>
   <div class="cr"><button class="chip" id="pp" type="button">Pause video</button>{% if collections.postsNewest.length %}<a class="chip" href="/posts/">Last entry {{ collections.postsNewest[0].date | ymd }}</a>{% endif %}</div>
 </div>

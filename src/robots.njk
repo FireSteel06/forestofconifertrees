@@ -1,0 +1,9 @@
+Use .njk, not .txt — Eleventy won't run Nunjucks in a .txt file.
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
