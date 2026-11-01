@@ -57,3 +57,4 @@ footer{padding:12px 2px 6px;font:300 22px/1 "IBM Plex Mono",ui-monospace,SFMono-
 footer a{text-decoration:none}
 @media (max-width:700px){.txt{background:rgba(232,232,230,.88);padding:10px 10px 4px;left:12px;width:calc(100% - 24px)}.logo{left:12px}.cr{bottom:56px}}
 .panel img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.im img{display:block;box-sizing:border-box;width:100%;height:auto;aspect-ratio:var(--ar,auto);object-fit:cover;border:1px solid #111}
