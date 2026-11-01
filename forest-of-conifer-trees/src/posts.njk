@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: Post history
+permalink: /posts/
+---
+<div class="panel grad" style="--x:30%;--y:25%">
+  <a class="logo" href="/">forest of conifer trees</a>
+  <div class="txt">
+    <h2>Post history</h2>
+    {% if collections.postsNewest.length %}
+    <div class="p">
+{% for post in collections.postsNewest %}
+      <details><summary><span>{{ post.date | ymd }}</span><span>{{ post.data.title }}</span></summary><p>{{ post.data.excerpt }}<br><a href="{{ post.url }}">Open post</a></p></details>
+{% endfor %}
+    </div>
+    {% else %}<p>Nothing yet.</p>{% endif %}
+  </div>
+</div>
+<footer><a href="/">forest of conifer trees</a></footer>
