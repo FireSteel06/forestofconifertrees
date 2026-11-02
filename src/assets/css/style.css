@@ -128,4 +128,4 @@ footer a{text-decoration:none}
     .world .logo{left:calc(16px / var(--fit,1));top:calc(12px / var(--fit,1));font-size:calc(15px / var(--fit,1))}
     .zc{display:none!important}
     .hint{font-size:10px;padding:5px 7px;right:8px;bottom:8px}}
-.im img{display:block;box-sizing:border-box;width:100%;height:auto;aspect-ratio:var(--ar,auto);object-fit:cover;border:1px solid #111}
+.im img{display:block;box-sizing:border-box;width:100%;height:auto;aspect-ratio:var(--ar,auto);object-fit:cover;border:1px solid #111}np
