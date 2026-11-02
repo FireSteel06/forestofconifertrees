@@ -1,8 +1,11 @@
 ---
 layout: base.njk
 ---
-<div class="panel">
-  <video class="ph" id="vid" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="/assets/video/poster.jpg" src="/assets/video/bench-web.mp4"></video>
+<div class="panel home">
+  <video class="ph" id="vid" autoplay muted loop playsinline preload="auto" aria-hidden="true" poster="/assets/video/poster.jpg">
+    <source src="/assets/video/bench-mobile.mp4" media="(max-width: 768px)" type="video/mp4">
+    <source src="/assets/video/bench-web.mp4" type="video/mp4">
+  </video>
   <a class="logo" href="/">forest of conifer trees</a>
   <div class="txt">
     <h2>Latest posts</h2>
