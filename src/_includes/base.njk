@@ -34,6 +34,9 @@
   <a href="/art/"{% if page.url == "/art/" %} aria-current="page"{% endif %}>Art in progress</a>
   <a href="/about/"{% if page.url == "/about/" %} aria-current="page"{% endif %}>About me</a>
 </nav>
+<footer>
+  <a href="{{ footerUrl or '/' }}">{{ footerText or 'forest of conifer trees' }}</a>
+</footer>
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

@@ -2,12 +2,14 @@
     box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#131313;--fg:#e8e8e6;color-scheme:dark}}
 :root[data-theme="dark"]{--page:#131313;--fg:#e8e8e6;color-scheme:dark}
-body{position:relative;margin:0;padding:12px;background:var(--page);color:var(--fg);font:400 15px/1.55 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;-webkit-text-size-adjust:100%}
+html, body{height:100%}
+body{position:relative;margin:0;padding:12px;background:var(--page);color:var(--fg);font:400 15px/1.55 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;-webkit-text-size-adjust:100%;display:flex;flex-direction:column;height:calc(100svh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));box-sizing:border-box}
+main{display:contents}
 [hidden]{display:none!important}
 a{color:inherit}
 :focus-visible{outline:2px solid #000;outline-offset:2px;background:#fff}
 .defs{position:absolute;width:0;height:0}
-.panel{position:relative;overflow:hidden;height:calc(100svh - 24px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:560px;background:var(--g2);color:#111}
+.panel{order:1;flex:1 1 auto;min-height:0;position:relative;overflow:hidden;background:var(--g2);color:#111}
 .panel+.panel{margin-top:12px}
 .panel svg.ph{position:absolute;inset:0;width:100%;height:100%}
 .panel video.ph,.panel img.ph,.panel picture.ph,.panel picture.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -62,18 +64,18 @@ details p{margin:2px 0 8px 96px;max-width:28ch}
 .im .f span{background:rgba(243,243,241,.85);padding:0 6px}
 .im figcaption{font-size:12px;margin-top:6px}
 .hint{position:absolute;right:14px;bottom:14px;z-index:3;pointer-events:none}
-nav{position:fixed;z-index:5;left:24px;bottom:calc(60px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:6px;max-width:calc(100% - 48px)}
+footer{order:2;flex:0 0 auto;padding:12px 2px 4px;font:300 22px/1 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:-.02em}
+footer a{text-decoration:none}
+nav{order:3;flex:0 0 auto;position:relative;z-index:5;margin-top:4px;margin-bottom:0;display:flex;flex-wrap:wrap;gap:6px;max-width:calc(100% - 48px)}
 nav a{background:#fff;color:#111;font-size:12px;line-height:1;padding:5px 8px;text-decoration:none}
 nav a:hover,nav a[aria-current="page"]{background:#111;color:#fff}
-footer{padding:12px 2px 6px;font:300 22px/1 "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:-.02em}
-footer a{text-decoration:none}
 @media (max-width:700px){
     :root{--bar:0px}
     body{padding:12px 12px 0;font-size:13px}
-    footer{font-size:13px;padding:12px 4px calc(40px + env(safe-area-inset-bottom,0px))}
+    footer{order:2;font-size:13px;padding:8px 4px 2px}
     .logo{left:16px;top:14px;font-size:15px;max-width:calc(100% - 32px)}
 
-    .panel{height:calc(100svh - 24px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));min-height:0}
+    .panel{min-height:0}
     .panel+.panel{margin-top:0}
     .art{height:82svh}
 
@@ -105,11 +107,13 @@ footer a{text-decoration:none}
     }
 
     nav {
-        position: fixed;
-        z-index: 10;
-        left: 12px;
-        right: 12px;
-        bottom: calc(45px + env(safe-area-inset-bottom, 0px));
+        order:3;
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        margin-top: 4px;
+        margin-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
         max-width: none;
         justify-content: space-between;
         gap: 4px;
@@ -129,4 +133,4 @@ footer a{text-decoration:none}
     .world .logo{left:calc(16px / var(--fit,1));top:calc(12px / var(--fit,1));font-size:calc(15px / var(--fit,1))}
     .zc{display:none!important}
     .hint{font-size:10px;padding:5px 7px;right:8px;bottom:8px}}
-.im img{display:block;box-sizing:border-box;width:100%;height:auto;aspect-ratio:var(--ar,auto);object-fit:cover;border:1px solid #111
+.im img{display:block;box-sizing:border-box;width:100%;height:auto;aspect-ratio:var(--ar,auto);object-fit:cover;border:1px solid #111}
